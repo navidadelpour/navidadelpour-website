@@ -1,3 +1,4 @@
+import { getPost } from "@/api";
 import compileMDXFromFileSystem from "@/utils/compileMDXFromFileSystem";
 
 export default async function Project({
@@ -5,7 +6,7 @@ export default async function Project({
 }: {
   params: { slug: string };
 }) {
-  const { content, frontmatter } = await compileMDXFromFileSystem({
+  const { content, frontmatter } = await getPost({
     type: "projects",
     slug,
   });

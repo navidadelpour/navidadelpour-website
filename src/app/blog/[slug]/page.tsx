@@ -1,11 +1,11 @@
-import compileMDXFromFileSystem from "@/utils/compileMDXFromFileSystem";
+import { getPost } from "@/api";
 
 export default async function BlogPost({
   params: { slug },
 }: {
   params: { slug: string };
 }) {
-  const { content, frontmatter } = await compileMDXFromFileSystem({
+  const { content, frontmatter } = await getPost({
     type: "blog",
     slug,
   });
