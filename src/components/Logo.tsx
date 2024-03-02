@@ -3,7 +3,6 @@ import Image from "next/image";
 
 import { NAME } from "@/consts/brand";
 
-// TODO: UPDATE LOGO.
 export default function Logo() {
   return (
     <>
@@ -11,8 +10,8 @@ export default function Logo() {
       <Image
         width={157}
         height={32}
-        className="dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert h-8 w-auto"
-        src="/next.svg"
+        className=""
+        src="/logo/navidadelpour-logo-white-stroke-logotype.svg"
         alt=""
       />
     </>
