@@ -10,7 +10,6 @@ export default function Logo() {
       <Image
         width={157}
         height={53.89}
-        className=""
         src="/logo/navidadelpour-logo-white-stroke-logotype.svg"
         alt=""
       />

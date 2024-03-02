@@ -1,7 +1,20 @@
-export default function BlogPost({
+import compileMDXFromFileSystem from "@/utils/compileMDXFromFileSystem";
+
+export default async function BlogPost({
   params: { slug },
 }: {
   params: { slug: string };
 }) {
-  return `Blog ${slug}`;
+  const { content, frontmatter } = await compileMDXFromFileSystem({
+    type: "blog",
+    slug,
+  });
+
+  return (
+    <>
+      <h1>{JSON.stringify({ frontmatter })}</h1>
+      <br />
+      {content}
+    </>
+  );
 }

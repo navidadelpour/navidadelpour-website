@@ -1,7 +1,20 @@
-export default function Project({
+import compileMDXFromFileSystem from "@/utils/compileMDXFromFileSystem";
+
+export default async function Project({
   params: { slug },
 }: {
   params: { slug: string };
 }) {
-  return `Project ${slug}`;
+  const { content, frontmatter } = await compileMDXFromFileSystem({
+    type: "projects",
+    slug,
+  });
+
+  return (
+    <>
+      <h1>{JSON.stringify({ frontmatter })}</h1>
+      <br />
+      {content}
+    </>
+  );
 }
