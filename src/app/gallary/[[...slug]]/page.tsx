@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 
+import Container from "@/components/Layout/Container";
+
 export default function Gallary({
   params: { slug },
 }: {
@@ -9,5 +11,5 @@ export default function Gallary({
     notFound();
   }
 
-  return `Gallary ${slug}`;
+  return <Container>Gallary {slug}</Container>;
 }
